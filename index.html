@@ -4,14 +4,14 @@
     <title>Introduction to Tidyverse</title>
     <meta charset="utf-8" />
     <meta name="author" content="Paul E. Santos Andrade" />
-    <meta name="date" content="2020-03-24" />
+    <meta name="date" content="2023-03-18" />
+    <script src="libs/header-attrs-2.20/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
-    <link href="libs/countdown-0.3.5/countdown.css" rel="stylesheet" />
-    <script src="libs/countdown-0.3.5/countdown.js"></script>
+    <link href="libs/countdown-0.4.0/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown-0.4.0/countdown.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets\css\conf-theme.css" type="text/css" />
-    <link rel="stylesheet" href="assets\css\conf-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/conf-theme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/conf-fonts.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -43,7 +43,7 @@ layout: true
 
 # Getting Started
 
-You will learn the basics of <i class="fab  fa-r-project "></i> and data science, and practice using the RStudio IDE (integrated development environment). We'll discuss about data transformation and tidying with **dplyr** and **tidyr**.
+You will learn the basics of <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> and data science, and practice using the RStudio IDE (integrated development environment). We'll discuss about data transformation and tidying with **dplyr** and **tidyr**.
 
 If you want to transition from coding in base R to the **tidyverse**, or just jump into doing data science in the tidyverse without any prior R experience.
 
@@ -109,7 +109,8 @@ class: inverse
 # Your Turn
 
 
-<div class="countdown" id="timer_5e7a4dc3" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_3e20834a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -287,7 +288,8 @@ class: inverse
 # Your Turn
 
 
-<div class="countdown" id="timer_5e7a4f8d" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_2da34f15" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -321,22 +323,23 @@ chem_trait
 ```
 
 ```
-## # A tibble: 576 x 15
-##    date       elevation site  dest_block_id treatment taxon stoich_label
-##    &lt;date&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;       
-##  1 2015-08-20      3500 M     MO            LOCAL     Poly~ 164         
-##  2 2015-08-20      3850 A     AO            LOCAL     Poly~ 198         
-##  3 2015-08-20      3500 M     MO            LOCAL     Poly~ 163         
-##  4 2015-08-20      3000 L     LO            LOCAL     Poly~ 113         
-##  5 2015-08-20      4100 H     HO            LOCAL     Rhod~ 224         
-##  6 2015-08-20      3500 M     MO            LOCAL     Rhod~ 172         
-##  7 2015-08-20      3850 A     AO            LOCAL     Hemi~ 186         
-##  8 2015-08-20      3500 M     MO            LOCAL     Clin~ 134         
-##  9 2015-08-20      3000 L     LO            LOCAL     Swer~ 122         
-## 10 2015-08-20      3500 M     MO            LOCAL     Hemi~ 145         
-## # ... with 566 more rows, and 8 more variables: p_percent &lt;dbl&gt;,
-## #   c_percent &lt;dbl&gt;, n_percent &lt;dbl&gt;, cn_ratio &lt;dbl&gt;, d_n15_percent &lt;dbl&gt;,
-## #   d_c13_percent &lt;dbl&gt;, n &lt;dbl&gt;, cnp_comment &lt;chr&gt;
+## # A tibble: 576 × 15
+##    date       elevation site  dest_block…¹ treat…² taxon stoic…³ p_per…⁴ c_per…⁵
+##    &lt;date&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+##  1 2015-08-20      3500 M     MO           LOCAL   Poly… 164      0.0984    44.0
+##  2 2015-08-20      3850 A     AO           LOCAL   Poly… 198      0.218     44.1
+##  3 2015-08-20      3500 M     MO           LOCAL   Poly… 163      0.0983    45.8
+##  4 2015-08-20      3000 L     LO           LOCAL   Poly… 113      0.0587    44.6
+##  5 2015-08-20      4100 H     HO           LOCAL   Rhod… 224      0.128     46.6
+##  6 2015-08-20      3500 M     MO           LOCAL   Rhod… 172      0.101     42.2
+##  7 2015-08-20      3850 A     AO           LOCAL   Hemi… 186      0.122     47.4
+##  8 2015-08-20      3500 M     MO           LOCAL   Clin… 134      0.124     46.0
+##  9 2015-08-20      3000 L     LO           LOCAL   Swer… 122      0.206     48.7
+## 10 2015-08-20      3500 M     MO           LOCAL   Hemi… 145      0.0632    48.6
+## # … with 566 more rows, 6 more variables: n_percent &lt;dbl&gt;, cn_ratio &lt;dbl&gt;,
+## #   d_n15_percent &lt;dbl&gt;, d_c13_percent &lt;dbl&gt;, n &lt;dbl&gt;, cnp_comment &lt;chr&gt;, and
+## #   abbreviated variable names ¹​dest_block_id, ²​treatment, ³​stoich_label,
+## #   ⁴​p_percent, ⁵​c_percent
 ```
 
 ---
@@ -351,7 +354,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 3
+## # A tibble: 576 × 3
 ##    date       site  taxon                    
 ##    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;                    
 ##  1 2015-08-20 M     Polygonum cyanandrum     
@@ -364,7 +367,7 @@ chem_trait %&gt;%
 ##  8 2015-08-20 M     Clinopodium polycephalum 
 ##  9 2015-08-20 L     Swertia macrosperma      
 ## 10 2015-08-20 M     Hemiphragma heterophyllum
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 
@@ -380,21 +383,23 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 12
-##    dest_block_id treatment taxon stoich_label p_percent c_percent n_percent
-##    &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
-##  1 MO            LOCAL     Poly~ 164             0.0984      44.0      2.48
-##  2 AO            LOCAL     Poly~ 198             0.218       44.1      2.85
-##  3 MO            LOCAL     Poly~ 163             0.0983      45.8      3.06
-##  4 LO            LOCAL     Poly~ 113             0.0587      44.6      2.51
-##  5 HO            LOCAL     Rhod~ 224             0.128       46.6      2.64
-##  6 MO            LOCAL     Rhod~ 172             0.101       42.2      2.14
-##  7 AO            LOCAL     Hemi~ 186             0.122       47.4      1.83
-##  8 MO            LOCAL     Clin~ 134             0.124       46.0      3.05
-##  9 LO            LOCAL     Swer~ 122             0.206       48.7      2.43
-## 10 MO            LOCAL     Hemi~ 145             0.0632      48.6      2.07
-## # ... with 566 more rows, and 5 more variables: cn_ratio &lt;dbl&gt;,
-## #   d_n15_percent &lt;dbl&gt;, d_c13_percent &lt;dbl&gt;, n &lt;dbl&gt;, cnp_comment &lt;chr&gt;
+## # A tibble: 576 × 12
+##    dest_…¹ treat…² taxon stoic…³ p_per…⁴ c_per…⁵ n_per…⁶ cn_ra…⁷ d_n15…⁸ d_c13…⁹
+##    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 MO      LOCAL   Poly… 164      0.0984    44.0    2.48    17.8  2.50     -30.9
+##  2 AO      LOCAL   Poly… 198      0.218     44.1    2.85    15.5  3.77     -31.1
+##  3 MO      LOCAL   Poly… 163      0.0983    45.8    3.06    15.0  2.52     -30.2
+##  4 LO      LOCAL   Poly… 113      0.0587    44.6    2.51    17.8  4.92     -30.5
+##  5 HO      LOCAL   Rhod… 224      0.128     46.6    2.64    17.6  0.0111   -29.1
+##  6 MO      LOCAL   Rhod… 172      0.101     42.2    2.14    19.7  1.30     -29.0
+##  7 AO      LOCAL   Hemi… 186      0.122     47.4    1.83    25.8  1.07     -28.5
+##  8 MO      LOCAL   Clin… 134      0.124     46.0    3.05    15.1  0.750    -28.5
+##  9 LO      LOCAL   Swer… 122      0.206     48.7    2.43    20.1  2.43     -28.2
+## 10 MO      LOCAL   Hemi… 145      0.0632    48.6    2.07    23.4  1.53     -27.7
+## # … with 566 more rows, 2 more variables: n &lt;dbl&gt;, cnp_comment &lt;chr&gt;, and
+## #   abbreviated variable names ¹​dest_block_id, ²​treatment, ³​stoich_label,
+## #   ⁴​p_percent, ⁵​c_percent, ⁶​n_percent, ⁷​cn_ratio, ⁸​d_n15_percent,
+## #   ⁹​d_c13_percent
 ```
 
 ---
@@ -411,7 +416,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    date       site 
 ##    &lt;date&gt;     &lt;chr&gt;
 ##  1 2015-08-20 M    
@@ -424,7 +429,7 @@ chem_trait %&gt;%
 ##  8 2015-08-20 M    
 ##  9 2015-08-20 L    
 ## 10 2015-08-20 M    
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 
@@ -441,7 +446,7 @@ select( time = date,
 
 
 ```
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    time       location
 ##    &lt;date&gt;     &lt;chr&gt;   
 ##  1 2015-08-20 M       
@@ -454,7 +459,7 @@ select( time = date,
 ##  8 2015-08-20 M       
 ##  9 2015-08-20 L       
 ## 10 2015-08-20 M       
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 ]
@@ -473,7 +478,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 6
+## # A tibble: 576 × 6
 ##    date       elevation site  dest_block_id treatment taxon                    
 ##    &lt;date&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;                    
 ##  1 2015-08-20      3500 M     MO            LOCAL     Polygonum cyanandrum     
@@ -486,7 +491,7 @@ chem_trait %&gt;%
 ##  8 2015-08-20      3500 M     MO            LOCAL     Clinopodium polycephalum 
 ##  9 2015-08-20      3000 L     LO            LOCAL     Swertia macrosperma      
 ## 10 2015-08-20      3500 M     MO            LOCAL     Hemiphragma heterophyllum
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 ---
@@ -503,7 +508,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    cn_ratio cnp_comment
 ##       &lt;dbl&gt; &lt;chr&gt;      
 ##  1     17.8 &lt;NA&gt;       
@@ -516,7 +521,7 @@ chem_trait %&gt;%
 ##  8     15.1 &lt;NA&gt;       
 ##  9     20.1 &lt;NA&gt;       
 ## 10     23.4 &lt;NA&gt;       
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 ---
@@ -533,7 +538,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 74 x 2
+## # A tibble: 74 × 2
 ##    treatment taxon                      
 ##    &lt;chr&gt;     &lt;chr&gt;                      
 ##  1 OTC       Potentilla leuconota       
@@ -546,7 +551,7 @@ chem_trait %&gt;%
 ##  8 OTC       Epilobium fangii           
 ##  9 OTC       Viola biflora var. rockiana
 ## 10 OTC       Artemisia flaccida         
-## # ... with 64 more rows
+## # … with 64 more rows
 ```
 
 
@@ -565,7 +570,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 9 x 2
+## # A tibble: 9 × 2
 ##   treatment taxon           
 ##   &lt;chr&gt;     &lt;chr&gt;           
 ## 1 OTC       Epilobium fangii
@@ -619,7 +624,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 8 x 2
+## # A tibble: 8 × 2
 ##   site  treatment
 ##   &lt;chr&gt; &lt;chr&gt;    
 ## 1 M     LOCAL    
@@ -641,7 +646,7 @@ chem_trait %&gt;%
 ```r
 chem_trait %&gt;% 
   select(elevation, site)
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    elevation site 
 ##        &lt;dbl&gt; &lt;chr&gt;
 ##  1      3500 M    
@@ -654,7 +659,7 @@ chem_trait %&gt;%
 ##  8      3500 M    
 ##  9      3000 L    
 ## 10      3500 M    
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 ]
 
@@ -664,7 +669,7 @@ chem_trait %&gt;%
 chem_trait %&gt;% 
   select(elevation, site) %&gt;% 
   arrange(elevation)
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    elevation site 
 ##        &lt;dbl&gt; &lt;chr&gt;
 ##  1      3000 L    
@@ -677,7 +682,7 @@ chem_trait %&gt;%
 ##  8      3000 L    
 ##  9      3000 L    
 ## 10      3000 L    
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 ]
 
@@ -691,7 +696,7 @@ chem_trait %&gt;%
 ```r
 chem_trait %&gt;% 
   select(elevation, site)
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    elevation site 
 ##        &lt;dbl&gt; &lt;chr&gt;
 ##  1      3500 M    
@@ -704,7 +709,7 @@ chem_trait %&gt;%
 ##  8      3500 M    
 ##  9      3000 L    
 ## 10      3500 M    
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 ]
 
@@ -714,7 +719,7 @@ chem_trait %&gt;%
 chem_trait %&gt;% 
   select(elevation, site) %&gt;% 
   arrange(desc(elevation))
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    elevation site 
 ##        &lt;dbl&gt; &lt;chr&gt;
 ##  1      4100 H    
@@ -727,7 +732,7 @@ chem_trait %&gt;%
 ##  8      4100 H    
 ##  9      4100 H    
 ## 10      4100 H    
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 ]
 
@@ -737,7 +742,8 @@ class: inverse
 # Your Turn
 
 
-<div class="countdown" id="timer_5e7a4dc6" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_768feeb0" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -747,7 +753,7 @@ class: center, middle, inverse
 
 ## Deriving Information
 
-<i class="fas  fa-sitemap "></i>
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"/></svg>
 
 ---
 
@@ -762,7 +768,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 4
+## # A tibble: 576 × 4
 ##    site  elevation c_percent c_percent_prop
 ##    &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;
 ##  1 M          3500      44.0           4.40
@@ -775,7 +781,7 @@ chem_trait %&gt;%
 ##  8 M          3500      46.0           4.60
 ##  9 L          3000      48.7           4.87
 ## 10 M          3500      48.6           4.86
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 ---
@@ -792,7 +798,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 5
+## # A tibble: 576 × 5
 ##    site  elevation c_percent p_percent c_p_percent
 ##    &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
 ##  1 M          3500      44.0    0.0984        44.1
@@ -805,7 +811,7 @@ chem_trait %&gt;%
 ##  8 M          3500      46.0    0.124         46.1
 ##  9 L          3000      48.7    0.206         49.0
 ## 10 M          3500      48.6    0.0632        48.7
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 ---
@@ -821,7 +827,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 1 x 2
+## # A tibble: 1 × 2
 ##   lowest_elev hight_elev
 ##         &lt;dbl&gt;      &lt;dbl&gt;
 ## 1        3000       4100
@@ -841,7 +847,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 1 x 2
+## # A tibble: 1 × 2
 ##   n_entries n_treatment
 ##       &lt;int&gt;       &lt;int&gt;
 ## 1       576           8
@@ -859,7 +865,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   n_species
 ##       &lt;int&gt;
 ## 1        63
@@ -872,7 +878,8 @@ class: inverse
 # Your Turn
 
 
-<div class="countdown" id="timer_5e7a4eb8" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6816478b" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -881,7 +888,7 @@ class: inverse
 class: inverse, center, middle
 
 # Splitting the data
-<i class="fas  fa-project-diagram "></i>
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V96H384V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H432c-26.5 0-48-21.5-48-48V160H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H272c-26.5 0-48-21.5-48-48V336c0-1.7 .1-3.4 .3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/></svg>
 
 
 ---
@@ -907,7 +914,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 4 x 4
+## # A tibble: 4 × 4
 ##   site  n_samples n_species mean_p_percent
 ##   &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;          &lt;dbl&gt;
 ## 1 A           144        25         NA    
@@ -931,7 +938,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 24 x 5
+## # A tibble: 24 × 5
 ## # Groups:   site [4]
 ##    site  treatment n_samples n_species mean_p_percent
 ##    &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;     &lt;int&gt;          &lt;dbl&gt;
@@ -945,7 +952,7 @@ chem_trait %&gt;%
 ##  8 H     2                21         6          0.160
 ##  9 H     4                 7         3          0.124
 ## 10 H     C                 8         2          0.155
-## # ... with 14 more rows
+## # … with 14 more rows
 ```
 
 ---
@@ -962,7 +969,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 4 x 5
+## # A tibble: 4 × 5
 ##   site  n_samples n_species mean_p_percent n_of_na
 ##   &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;          &lt;dbl&gt;   &lt;int&gt;
 ## 1 A           144        25         NA           1
@@ -984,7 +991,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 4 x 5
+## # A tibble: 4 × 5
 ##   site  n_samples n_species mean_p_percent n_of_na
 ##   &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;          &lt;dbl&gt;   &lt;int&gt;
 ## 1 A           144        25          0.172       1
@@ -1011,7 +1018,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 4 x 4
+## # A tibble: 4 × 4
 ##   site  n_samples n_species mean_p_percent
 ##   &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;          &lt;dbl&gt;
 ## 1 A           144        25          0.172
@@ -1027,7 +1034,8 @@ class: inverse
 # Your Turn
 
 
-<div class="countdown" id="timer_5e7a4fda" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_feb15d58" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1094,7 +1102,7 @@ chem_trait %&gt;%
 
 
 ```
-## # A tibble: 576 x 3
+## # A tibble: 576 × 3
 ##    site  genus       specie       
 ##    &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;        
 ##  1 M     Polygonum   cyanandrum   
@@ -1107,7 +1115,7 @@ chem_trait %&gt;%
 ##  8 M     Clinopodium polycephalum 
 ##  9 L     Swertia     macrosperma  
 ## 10 M     Hemiphragma heterophyllum
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 ---
@@ -1122,7 +1130,7 @@ chem_trait %&gt;%
 ```
 
 ```
-## # A tibble: 576 x 2
+## # A tibble: 576 × 2
 ##    site  dest_block_id
 ##    &lt;chr&gt; &lt;chr&gt;        
 ##  1 M     MO           
@@ -1135,7 +1143,7 @@ chem_trait %&gt;%
 ##  8 M     MO           
 ##  9 L     LO           
 ## 10 M     MO           
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 ]
 
@@ -1148,7 +1156,7 @@ chem_trait %&gt;%
 ```
 
 ```
-## # A tibble: 576 x 1
+## # A tibble: 576 × 1
 ##    site_dest
 ##    &lt;chr&gt;    
 ##  1 M_MO     
@@ -1161,7 +1169,7 @@ chem_trait %&gt;%
 ##  8 M_MO     
 ##  9 L_LO     
 ## 10 M_MO     
-## # ... with 566 more rows
+## # … with 566 more rows
 ```
 
 ]
@@ -1246,9 +1254,9 @@ class: inverse, right, middle
 
 # Find me at...
 
-[<i class="fab  fa-twitter "></i> @PaulEfrenSantos](https://twitter.com/PaulEfrenSantos)  
-[<i class="fab  fa-github "></i> @PaulESantos](https://github.com/PaulESantos)  
-[<i class="fas  fa-link "></i> paulefrensa.rbind.io](https://paulefrensa.rbind.io)
+[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> @PaulEfrenSantos](https://twitter.com/PaulEfrenSantos)  
+[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> @PaulESantos](https://github.com/PaulESantos)  
+[<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> paulefrensa.rbind.io](https://paulefrensa.rbind.io)  
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -1300,32 +1308,35 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
-  /* Replace <script> tags in slides area to make them executable
-   *
-   * Runs after post-processing of markdown source into slides and replaces only
-   * <script>s on the last slide of continued slides using the .has-continuation
-   * class added by xaringan. Finally, any <script>s in the slides area that
-   * aren't executed are commented out.
-   */
+  // Replace <script> tags in slides area to make them executable
   var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container:not(.has-continuation) script'
+    '.remark-slides-area .remark-slide-container script'
   );
   if (!scripts.length) return;
   for (var i = 0; i < scripts.length; i++) {
     var s = document.createElement('script');
     var code = document.createTextNode(scripts[i].textContent);
     s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
     scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-  var scriptsNotExecuted = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container.has-continuation script'
-  );
-  if (!scriptsNotExecuted.length) return;
-  for (var i = 0; i < scriptsNotExecuted.length; i++) {
-    var comment = document.createComment(scriptsNotExecuted[i].outerHTML)
-    scriptsNotExecuted[i].parentElement.replaceChild(comment, scriptsNotExecuted[i])
   }
 })();
 (function() {

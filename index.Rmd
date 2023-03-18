@@ -71,7 +71,7 @@ layout: true
 
 # Getting Started
 
-You will learn the basics of `r icon::fa("r-project")` and data science, and practice using the RStudio IDE (integrated development environment). We'll discuss about data transformation and tidying with **dplyr** and **tidyr**.
+You will learn the basics of `r fontawesome::fa("r-project")` and data science, and practice using the RStudio IDE (integrated development environment). We'll discuss about data transformation and tidying with **dplyr** and **tidyr**.
 
 If you want to transition from coding in base R to the **tidyverse**, or just jump into doing data science in the tidyverse without any prior R experience.
 
@@ -594,7 +594,7 @@ class: center, middle, inverse
 
 ## Deriving Information
 
-`r icon::fa("sitemap")`
+`r fontawesome::fa("sitemap")`
 
 ---
 
@@ -692,7 +692,7 @@ countdown(minutes = 1)
 class: inverse, center, middle
 
 # Splitting the data
-`r icon::fa("project-diagram")`
+`r fontawesome::fa("project-diagram")`
 
 
 ---
@@ -992,6 +992,6 @@ class: inverse, right, middle
 
 # Find me at...
 
-[`r icon::fa("twitter")` @PaulEfrenSantos](https://twitter.com/PaulEfrenSantos)  
-[`r icon::fa("github")` @PaulESantos](https://github.com/PaulESantos)  
-[`r icon::fa("link")` paulefrensa.rbind.io](https://paulefrensa.rbind.io)  
+[`r fontawesome::fa("twitter")` @PaulEfrenSantos](https://twitter.com/PaulEfrenSantos)  
+[`r fontawesome::fa("github")` @PaulESantos](https://github.com/PaulESantos)  
+[`r fontawesome::fa("link")` paulefrensa.rbind.io](https://paulefrensa.rbind.io)  
